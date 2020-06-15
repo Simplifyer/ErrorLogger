@@ -1,0 +1,36 @@
+{
+  "name": "simplifyer-error-logger",
+  "version": "0.0.1",
+  "description": "Log errors for developer",
+  "main": "app.js",
+  "scripts": {
+    "build": "npm run clear && webpack --mode=production",
+    "dev": "npm run clear && webpack --mode=development",
+    "start": "npm run clear && webpack-dev-server --mode=development --open",
+    "clear": "del-cli dist",
+    "fix": "./node_modules/.bin/eslint --fix src/**/*.{js,ts,tsx}",
+    "lint": "./node_modules/.bin/eslint src/**/*.{js,ts,tsx}",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint"
+  },
+  "author": "Andrey Suha",
+  "license": "ISC",
+  "dependencies": {
+    "simplifyer-dev-logger": "0.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "del-cli": "^3.0.0",
+    "eslint": "^7.2.0",
+    "eslint-loader": "^4.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "terser-webpack-plugin": "^3.0.4",
+    "typescript": "^3.9.5",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}

@@ -1,0 +1,173 @@
+{
+    "globals": {
+        "isDev": "readonly",
+        "dl": "readonly"
+    },
+    "env": {
+        "browser": true,
+        "es2020": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "@typescript-eslint/no-unused-vars": 0,
+        "for-direction": "error", // создан бесконечный цикл for
+        "getter-return": "error", // тело геттера не включает в себя return
+        "no-async-promise-executor": "error", // исполнительная функция промиса является асинхронной
+        "no-await-in-loop": "error", // ожидание асинхронной функции используется в теле цикла
+        "no-compare-neg-zero": "error", // сравнение с -0
+        "no-cond-assign": "error", // в условном выражении используется присваивание
+        "no-console": "error", // используется console
+        "no-constant-condition": "error", // в условном операторе используется постоянное выражение
+        "no-dupe-args": "error", // дублируется название параметра функции
+        "no-dupe-keys": "error", // дублируется название свойста в объекте
+        "no-duplicate-case": "error", // дублируется значение case в операторе switch..case
+        "no-empty": "error", // используется пустой блок
+        "no-empty-character-class": "error", // используется пустой класс символов [] в регулярном выражении
+        "no-ex-assign": "error", // изменен параметр исключени в catch блоке
+        "no-extra-boolean-cast": "error", // логическое выражение может быть упрощено
+        "no-extra-parens": "error", // используются излишние круглые скобки
+        "no-extra-semi": "error", // используются излишние запятые
+        "no-func-assign": "error", // функция написаная объявленя в FunctionDeclation была переопределена
+        "no-inner-declarations": "error", // функция объявлена не в корне файла и не внутри другой функции
+        "no-invalid-regexp": "error", // в RegExp конструкторе используется не валидная строка
+        "no-regex-spaces": "error", // использование более одного пробела в регулярном выражении
+        "no-sparse-arrays": "error", // используется розреженый массив
+        "no-unreachable": "error", // используется недостежимый код
+        "no-unsafe-negation": "error", // используется отрицание левого операнда в операторах in, instanceof
+        "use-isnan": "error", // не используется функция isNaN для проверки на NaN
+        "array-callback-return": "error", // не используется return в методе массива который требует этого
+        "consistent-return": "error", // не используется return в else
+        "curly": ["error", "multi-line"], // см. https://eslint.org/docs/rules/curly c опцией multi-line
+        "dot-notation": "error", // для доступа к заренее известному свойтву объекта используются скобки вместо точки
+        "eqeqeq": "error", // используется не строгое сравнение (== вместо === или != вместо !==)
+        "max-classes-per-file": ["error", 1], // В файле описан более чем один класс (Обратите внимание речь идет именно о классе, а не его екземпляре)
+        "no-else-return": "error", // для return используется избыточный блок else
+        "no-empty-function": "error", // используется пустое тело функции
+        "no-eval": "error", // используется метод eval
+        "no-extend-native": "error", // разширяется нативный объект
+        "no-extra-bind": "error", // используется bind не имеющий ефекта
+        "no-fallthrough": "error", // Описание здесь https://eslint.org/docs/rules/no-fallthrough
+        "no-floating-decimal": "error", // некорректно описано число с плавающей точкой
+        "no-global-assign": "error", // переопределяется один из глобалных объектов
+        "no-implicit-coercion": "error", // не корректное приведение типов подробности здесь https://eslint.org/docs/rules/no-implicit-coercion
+        "no-implied-eval": "error", // используется аналог evel
+        "no-invalid-this": "error", // ключевое слово this используется в некорректном конексте см. https://eslint.org/docs/rules/no-invalid-this
+        "no-labels": "error", // используются метки
+        "no-lone-blocks": "error", // используются избыточные блоки
+        "no-multi-spaces": "error", // используются избыточные пробелы
+        "no-multi-str": "error", // см. https://eslint.org/docs/rules/no-multi-str
+        "no-new-func": "error", // используется Function конструтор
+        "no-new-wrappers": "error", // используется конструктор для примитива
+        "no-octal": "error", // Используется восмиричный литереал см. https://eslint.org/docs/rules/no-octal
+        "no-octal-escape": "error", // см. https://eslint.org/docs/rules/no-octal-escape
+        "no-proto": "error", // используется свойство __propto__
+        "no-return-assign": ["error", "always"], // используется присвоение в return см. https://eslint.org/docs/rules/no-return-assign
+        "no-self-assign": "error", // см. https://eslint.org/docs/rules/no-self-assign
+        "no-self-compare": "error", // используется сравнение переменной самой с собой
+        "no-throw-literal": "error", // используется throw без создания Error см. https://eslint.org/docs/rules/no-throw-literal
+        "no-unused-expressions": "error", // используется выражение не влияющее на состояние программы
+        "no-useless-call": "error", // используется не обязательный call или apply
+        "no-useless-return": "error", // используется избыточный return
+        "no-with": "error", // используется оператор with
+        "require-await": "error", // используется async без await
+        "no-shadow-restricted-names": "error", // см. https://eslint.org/docs/rules/no-shadow-restricted-names
+        "no-undef": "error", // используется глобальная переменная не определенная в globals этого файла
+        "no-unused-vars": "error", // объявлена не используемая переманная
+        "no-use-before-define": "error", // переменная используется до ее объявления
+        "callback-return": "error", // см. https://eslint.org/docs/rules/callback-return
+        "array-bracket-newline": ["error", "consistent"], // см. https://eslint.org/docs/rules/array-bracket-newline
+        "array-bracket-spacing": ["error", "always"], // см. https://eslint.org/docs/rules/array-bracket-spacing
+        "array-element-newline": ["error", "consistent"], // см. https://eslint.org/docs/rules/array-element-newline
+        "block-spacing": "error", // после открывающей или перед закрывающей скобкой блока не используется пробел
+        "brace-style": ["error", "1tbs", {"allowSingleLine":  true}], // см. https://eslint.org/docs/rules/brace-style
+        "camelcase": "error", // название переменной и свойства объекта объявлено не в camelcase
+        "comma-dangle": "error", // поставлена запятая после последнего свойтва в объектк и последнего елемента в массиве
+        "comma-spacing": "error", // не поставлен пробел после запятой или поставлен перед
+        "comma-style": "error", // см. https://eslint.org/docs/rules/comma-style
+        "computed-property-spacing": "error", // см. https://eslint.org/docs/rules/computed-property-spacing
+        "consistent-this": ["error", "__this"], // для записи this в переменную используется имя переменной отличное от __this
+        "func-call-spacing": "error", // см. https://eslint.org/docs/rules/func-call-spacing
+        "func-style": ["error", "declaration", {"allowArrowFunctions": true }], // для объявления функции используется function expression
+        "indent": ["error", 4], // вложеные инструкции должны иметь отступ в 4 пробела от родителя см. https://eslint.org/docs/rules/indent
+        "key-spacing": "error", // см. https://eslint.org/docs/rules/key-spacing
+        "keyword-spacing": ["error",
+            {
+                "overrides": {
+                    "if": { "after": false },
+                    "for": { "after": false },
+                    "while": { "after": false }
+                }
+            }
+        ], // см. https://eslint.org/docs/rules/keyword-spacing
+        "lines-between-class-members": "error", // неиспользуется пробел между методами класса
+        "max-depth": "error", // превышена максимальная вложеность (4) условий см. https://eslint.org/docs/rules/max-depth
+        "max-len": ["error", {
+            "code": 120,
+            "ignoreComments": true,
+            "ignoreUrls": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true
+        }], // превышена максимальная длниа строки в 120 символов см. https://eslint.org/docs/rules/max-len
+        "max-lines": ["error", {"max":  300, "skipBlankLines": true, "skipComments": true}], // превышено максимальное количество строк в файле (300), без учета комментариев и строк состоящих из пробелов
+        "multiline-ternary": ["error", "never"], // тернарный оператор написан не в одну строку см. https://eslint.org/docs/rules/multiline-ternary
+        "new-cap": ["error", {
+            "newIsCap":  true, // оператор new запущен с функкцией именованой не в capitalize
+            "capIsNew": true, // функция именованая в capitalize запущена без оператора new
+            "newIsCapExceptions": [], // исключения для newIsCap использовать только для сторонних библиотек
+            "capIsNewExceptions": [] // исключения для capIsNew использовать только для сторонних библиотек
+        }
+        ], // см. https://eslint.org/docs/rules/new-cap
+        "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 3 }], // используется цепочка из более чем 3 методов в одной строке см. https://eslint.org/docs/rules/newline-per-chained-call
+        "no-lonely-if": "error", // см. https://eslint.org/docs/rules/no-lonely-if
+        "no-multiple-empty-lines": ["error", { "max": 2, "maxBOF": 0, "maxEOF": 1 }], // превышено максимальное число пустых строк (2)
+        "no-trailing-spaces": "error", // см. https://eslint.org/docs/rules/no-trailing-spaces
+        "no-unneeded-ternary": "error", // тернарный оператор можно упростить
+        "no-whitespace-before-property": "error", // см. https://eslint.org/docs/rules/no-whitespace-before-property
+        "nonblock-statement-body-position": "error", // см. https://eslint.org/docs/rules/nonblock-statement-body-position
+        "object-curly-newline": ["error", { "multiline": true }], // см. https://eslint.org/docs/rules/object-curly-newline
+        "object-curly-spacing": ["error", "always"], // отсутсвует пробел после открывающей или перед закрывающей фигурной скобкой объекта
+        "one-var": ["error", "consecutive"], // см. https://eslint.org/docs/rules/one-var
+        "padded-blocks": ["error", "never" ], // см. https://eslint.org/docs/rules/padded-blocks
+        "quote-props": ["error", "consistent"], // для названий свойств объекта используются не однродные скобки
+        "semi": ["error", "always"], // не стоит точка с запятой в конце оператора
+        "semi-spacing": ["error", { "before": false, "after": true }], // нету пробела или перевода строки после точки с запятой или есть перед ней
+        "semi-style": ["error", "last"], // см. https://eslint.org/docs/rules/semi-style
+        "space-before-blocks": "error", // нету пробела перед блоком
+        "space-before-function-paren": ["error", "never"], // см. https://eslint.org/docs/rules/space-before-function-paren
+        "space-in-parens": "error", // см. https://eslint.org/docs/rules/space-in-parens
+        "wrap-regex": "error", // см. https://eslint.org/docs/rules/wrap-regex
+        "arrow-body-style": ["error", "as-needed"], // см. https://eslint.org/docs/rules/arrow-body-style
+        "arrow-spacing": ["error", { "before": true, "after": true }], // перед или после стрелки не используется пробел
+        "generator-star-spacing": ["error", {"before":  false, "after": true}], // см. https://eslint.org/docs/rules/generator-star-spacing
+        "no-class-assign": "error", // см. https://eslint.org/docs/rules/no-class-assign
+        "no-confusing-arrow": ["error", {"allowParens": true}], // см. https://eslint.org/docs/rules/no-confusing-arrow
+        "no-const-assign": "error", // перепресвоено значение константе
+        "no-dupe-class-members": "error", // используются одинаковые имена для медодов одного класа
+        "no-duplicate-imports": ["error", { "includeExports": true }], // см. https://eslint.org/docs/rules/no-duplicate-imports
+        "no-new-symbol": "error", // Symbol вызван с оператором new
+        "no-this-before-super": "error", // this используется до вызова super() в конструкторе класса
+        "no-useless-constructor": "error", // см. https://eslint.org/docs/rules/no-useless-constructor
+        "no-useless-rename": "error", // см. https://eslint.org/docs/rules/no-useless-rename
+        "no-var": "error", // используется var для объявления переменной
+        "object-shorthand": ["error", "always", { "avoidExplicitReturnArrows": true }], // см. https://eslint.org/docs/rules/object-shorthand
+        "prefer-spread": "error", // см. https://eslint.org/docs/rules/prefer-spread
+        "prefer-template": "error", // используется конкатенация вместо литерального шаблона
+        "require-yield": "error", // в функции генераторе отсутсвует yield
+        "template-curly-spacing": ["error", "never"], // см. https://eslint.org/docs/rules/template-curly-spacing
+        "yield-star-spacing": ["error", "after"] // cм. https://eslint.org/docs/rules/yield-star-spacing
+    }
+}
