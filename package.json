@@ -2,7 +2,8 @@
   "name": "simplifyer-error-logger",
   "version": "0.0.1",
   "description": "Log errors for developer",
-  "main": "app.js",
+  "main": "./dist/js/app.js",
+  "types": "./dist/src/app.d.ts",
   "scripts": {
     "build": "npm run clear && webpack --mode=production",
     "dev": "npm run clear && webpack --mode=development",

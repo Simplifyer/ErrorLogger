@@ -5,11 +5,14 @@ const webpack = require("webpack");
 
 module.exports = (env, options) => ({
     entry: {
-        "bundle": path.resolve(__dirname, "./main.ts")
+        "index": path.resolve(__dirname, "./src/app.ts")
     },
     output: {
-        filename: "./js/[name].js",
-        path: __dirname + "/dist"
+        filename: "./js/[name].min.js",
+        path: path.resolve(__dirname + "/dist"),
+        library: "ELog",
+        libraryTarget: "umd",
+        umdNamedDefine: true
     },
     devtool: "source-map",
     optimization: {

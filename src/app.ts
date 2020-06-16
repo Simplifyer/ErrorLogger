@@ -4,7 +4,7 @@ interface MessageTemplate {
 }
 
 class ErrorBug {
-    private name: string;
+    private readonly name: string;
 
     private templates: MessageTemplate[] = [];
 
@@ -28,7 +28,7 @@ class ErrorBug {
         if(template) {
             const str: string = replace ? this.getReplaceStr(replace, template.message) : template.message,
                 msg = `${this.name}: ${str}`;
-            if(log) dl.error(msg);
+            if(log) dl.errorInProd(msg);
             return msg;
         }
 
